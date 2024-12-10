@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paragraph Adder and Remover</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #container {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Paragraph Adder and Remover</h1>
+  <button id="addParagraph">Add Paragraph</button>
+  <button id="removeParagraph">Remove Last Paragraph</button>
+
+  <div id="container"></div>
+  <script>
+    const addParagraphBtn = document.getElementById('addParagraph');
+    const removeParagraphBtn = document.getElementById('removeParagraph');
+    const container = document.getElementById('container');
+    addParagraphBtn.addEventListener('click', () => {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = 'This is a new paragraph.'; 
+      container.appendChild(paragraph);
+    });
+    removeParagraphBtn.addEventListener('click', () => {
+      if (container.lastChild) { 
+        container.removeChild(container.lastChild); 
+      }
+    });
+  </script>
+</body>
+</html>
